@@ -56,3 +56,59 @@ dotnet new gitignore
         ├── .gitignore
         └── TestWebApp.Server.sln
 ```
+
+# WebAPI プロジェクトの作成
+
+```bash
+# cd src/server
+dotnet new webapi --name TestWebApp.Server.Api --output TestWebApp.Server.Api --use-controllers
+```
+
+実行
+
+```bash
+cd TestWebApp.Server.Api
+dotnet run
+```
+
+```text
+$ dotnet run
+Building...
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5001
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+```
+
+<http://localhost:5001/swagger> にアクセスできる。
+
+ソリューションに作成したプロジェクトを追加する。
+
+```bash
+# cd src/server
+dotnet sln add TestWebApp.Server.Api
+```
+
+現在の構成
+
+```text
+.
+├── .editorconfig
+└── src
+    └── server
+        ├── .gitignore
+        ├── TestWebApp.Server.Api
+        │   ├── Controllers
+        │   │   └── WeatherForecastController.cs
+        │   ├── Program.cs
+        │   ├── Properties
+        │   │   └── launchSettings.json
+        │   ├── TestWebApp.Server.Api.csproj
+        │   ├── TestWebApp.Server.Api.http
+        │   ├── WeatherForecast.cs
+        │   ├── appsettings.Development.json
+        │   └── appsettings.json
+        └── TestWebApp.Server.sln
+```
