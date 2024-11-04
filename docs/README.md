@@ -112,3 +112,44 @@ dotnet sln add TestWebApp.Server.Api
         │   └── appsettings.json
         └── TestWebApp.Server.sln
 ```
+
+# 静的ファイルをサーブする
+
+以下のコードを `Program.cs` ファイルに追加。
+
+```diff
+ app.UseHttpsRedirection();
+
++app.UseStaticFiles();
+
+ app.UseAuthorization();
+```
+
+これにより `wwwroot` ディレクトリ内のファイルを `localhost:{PORT}/path/to/file.html` などのアドレスで取得することができる。
+
+一方で `localhost:{PORT}/` などのファイルを直接指定しないアドレスでは何も返してこない。この時に `index.html` などのデフォルトのファイルを返すようにするには以下のコードを追記する。
+
+```diff
+ app.UseHttpsRedirection();
+
++app.UseDefaultFiles();
+ app.UseStaticFiles();
+
+ app.UseAuthorization();
+```
+
+試しに以下のようなファイルを `wwwroot/index.html` として作成して実行すると `localhost:{PORT}` で作成したページを参照することができる。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <h1>Test</h1>
+</body>
+</html>
+```
