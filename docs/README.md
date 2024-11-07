@@ -267,3 +267,9 @@ ln -s ../../client/out wwwroot
 すると `wwwroot` という名前で `../../client/out` にアクセスすることができる。
 
 この状態で `dotnet run` を実行して `http://localhost:{PORT}` にアクセスすると Next.js のスタートページが表示される。
+
+※ Windows で同様のシンボリックリンクを作成するには以下のコマンドを管理者権限で実行する ([参考](https://dev.classmethod.jp/articles/make_windows_symbolic_link/))。
+
+```powershell
+mklink /D wwwroot ../../client/out
+```
