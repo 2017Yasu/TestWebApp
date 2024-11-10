@@ -18,13 +18,12 @@ ignorePublish: false
         ├── .gitignore
         ├── TestWebApp.Server.Api
         │   ├── Controllers
-        │   │   └── WeatherForecastController.cs
+        │   │   └── SystemController.cs
         │   ├── Program.cs
         │   ├── Properties
         │   │   └── launchSettings.json
         │   ├── TestWebApp.Server.Api.csproj
         │   ├── TestWebApp.Server.Api.http
-        │   ├── WeatherForecast.cs
         │   ├── appsettings.Development.json
         │   └── appsettings.json
         └── TestWebApp.Server.sln
@@ -128,13 +127,12 @@ What import alias would you like configured? @/*
     └── server
         ├── TestWebApp.Server.Api
         │   ├── Controllers
-        │   │   └── WeatherForecastController.cs
+        │   │   └── SystemController.cs
         │   ├── Program.cs
         │   ├── Properties
         │   │   └── launchSettings.json
         │   ├── TestWebApp.Server.Api.csproj
         │   ├── TestWebApp.Server.Api.http
-        │   ├── WeatherForecast.cs
         │   ├── appsettings.Development.json
         │   ├── appsettings.json
         │   └── wwwroot
