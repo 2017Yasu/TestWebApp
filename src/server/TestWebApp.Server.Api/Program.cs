@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
+using TestWebApp.Server.Api.Middlewares;
 using TestWebApp.Server.Api.Policies.Handlers;
 using TestWebApp.Server.Api.Policies.Requirements;
 using TestWebApp.Server.Api.Services;
@@ -83,6 +84,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseHtmlFileMiddleware();
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
